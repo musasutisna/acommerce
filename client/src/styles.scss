@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/theming';
+@import './palette.scss';
 
 $custom-typography: mat-typography-config(
   $font-family: 'Merienda'
@@ -7,5 +8,46 @@ $custom-typography: mat-typography-config(
 
 @include mat-core($custom-typography);
 
+// custom theme
+$custom-theme-primary: mat-palette((
+  Main: $primary,
+  Light: $primary-light,
+  Dark: $primary-dark,
+  contrast: (
+    Main: $on-primary,
+    Light: $on-primary,
+    Dark: $on-primary
+  )
+), Main, Light, Dark);
+$custom-theme-accent: mat-palette((
+  Main: $secondary,
+  Light: $secondary-light,
+  Dark: $secondary-dark,
+  contrast: (
+    Main: $on-secondary,
+    Light: $on-secondary,
+    Dark: $on-secondary
+  )
+), Main, Light, Dark);
+$custom-theme-warn: mat-palette((
+  Main: $error,
+  Light: $error-light,
+  Dark: $error-dark,
+  contrast: (
+    Main: $on-error,
+    Light: $on-error,
+    Dark: $on-error
+  )
+), Main, Light, Dark);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Merienda, "Helvetica Neue", sans-serif; }

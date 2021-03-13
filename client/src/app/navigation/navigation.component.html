@@ -1,0 +1,38 @@
+<mat-sidenav-container class="Container">
+  <mat-sidenav class="SideMenus" #sideMenus mode="over" color="primary">
+    <h1 class="SideMenuTitle">
+      <span>Shoes</span>
+      <button type="button" mat-icon-button (click)="sideMenus.close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </h1>
+    <mat-list class="SideMenuList">
+      <mat-list-item>
+        <mat-icon mat-list-icon>apps</mat-icon>
+        <span>Catalog</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>phone</mat-icon>
+        <span>Contact US</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>info</mat-icon>
+        <span>About US</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>shopping_cart</mat-icon>
+        <span>Shopping Cart</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="Content">
+    <mat-toolbar class="Navbar" color="primary">
+      <h1>Shoes</h1>
+      <button mat-icon-button (click)="sideMenus.open()" aria-label="Close" role="button">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
