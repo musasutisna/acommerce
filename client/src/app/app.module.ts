@@ -8,10 +8,13 @@ import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
+import { ImgLazyLoadDirective } from './directives/img-lazy-load/img-lazy-load.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    ImgLazyLoadDirective
   ],
   imports: [
     BrowserModule,
