@@ -1,0 +1,10 @@
+.FrontStore {
+  display: grid;
+  grid-template-columns: repeat(120, 1fr);
+  grid-template-rows: 15rem;
+
+  app-carousel-promos {
+    grid-column: span 120;
+    grid-row: 1;
+  }
+}

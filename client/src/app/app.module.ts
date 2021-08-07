@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { CarouselPromosComponent } from './components/carousel-promos/carousel-promos.component';
 
 import { ImgLazyLoadDirective } from './directives/img-lazy-load/img-lazy-load.directive';
 
@@ -14,6 +15,7 @@ import { ImgLazyLoadDirective } from './directives/img-lazy-load/img-lazy-load.d
   declarations: [
     AppComponent,
     NavigationComponent,
+    CarouselPromosComponent,
     ImgLazyLoadDirective
   ],
   imports: [

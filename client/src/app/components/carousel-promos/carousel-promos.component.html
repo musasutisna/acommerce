@@ -1,0 +1,12 @@
+<div class="CarouselPromos">
+  <div [ngClass]="'CarouselPromoImage ' + (inLoadPromoImage ? 'Loading' : '')">
+    <img [src]="currentPromoImage.src" [routerLink]="'/promo/' + currentPromoImage.id">
+  </div>
+  <div class="CarouselPromoNavigation">
+    <button
+      *ngFor="let promo of promos; index as promoIndex;"
+      [class]="promo.id === currentPromoImage.id ? 'active' : ''"
+      type="button"
+      (click)="changePromoImage(promoIndex)"></button>
+  </div>
+</div>

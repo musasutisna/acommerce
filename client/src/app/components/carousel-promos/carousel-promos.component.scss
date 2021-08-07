@@ -1,0 +1,86 @@
+@import '../../../palette.scss';
+
+@keyframes Loading {
+  0% {
+    color: $primary;
+  }
+  50% {
+    color: $secondary;
+  }
+  75% {
+    color: $primary;
+  }
+  100% {
+    color: $secondary;
+  }
+}
+
+.CarouselPromos {
+  display: grid;
+  grid-template-columns: repeat(120, 1fr);
+  grid-template-rows: auto 2.5rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0.1rem 0 #000000;
+
+  .CarouselPromoImage {
+    display: flex;
+    position: relative;
+    grid-column: 1 / span 120;
+    grid-row: 1 / span 2;
+    justify-content: center;
+    align-items: center;
+    background: $background;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .CarouselPromoImage.Loading {
+    &::before {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1001;
+      content: '\f090';
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      font-family: 'Material Icons';
+      color: $on-background;
+      background: $background;
+      animation: Loading 3s infinite;
+    }
+  }
+
+  .CarouselPromoNavigation {
+    display: flex;
+    grid-column: 1 / span 120;
+    grid-row: 2;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin-right: 0.1rem;
+      margin-left: 0.1rem;
+      width: 1rem;
+      height: 1rem;
+      background: $secondary;
+      border: 0.15rem solid $on-secondary;
+      border-radius: 100%;
+      outline: none;
+    }
+    button.active {
+      background: $primary;
+      border: 0.15rem solid $on-primary;
+    }
+  }
+}
